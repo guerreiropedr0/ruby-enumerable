@@ -1,7 +1,10 @@
 
 module MyEnumerable
-  def all?(&block)
-    Each {|item| yield item }
+  def all?
+    Each do |item| 
+      return false unless yield item
+      return true
+      end
     # if block_given?
     #   list.each do |word|
     #     return false unless yield word
