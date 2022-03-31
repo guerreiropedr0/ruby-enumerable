@@ -1,12 +1,17 @@
-require 'MyEnumerable'
+require './my_enumerable.rb'
 
 class MyList
   include MyEnumerable
-  def initiliaze()
-    @list
+  def initialize(*list)
+    @list = *list
   end
 
   def each
-    yield
+    i = 0
+    while @list[i]
+      yield @list[i]
+      i += 1
+    end
   end
 end
+
