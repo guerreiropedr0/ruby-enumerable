@@ -32,6 +32,17 @@ module MyEnumerable
     end
     false
   end
+  
+  def filter(list)
+    filtered_array = []
+    if block_given?
+      list.each do |element|
+        if yield element
+          filtered_array.push(element)
+        end
+      end
+      return filtered_array
+    else return list
+    end
+  end
 end
-
-puts MyEnumerable.all?([56, 11, 99], Integer)
