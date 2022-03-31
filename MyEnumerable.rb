@@ -1,5 +1,5 @@
 module MyEnumerable
-  def all?(list, reg_exp = nil)
+  def all?(list, pattern = nil)
     if block_given?
       list.each do |word|
       if !(yield word)
@@ -7,9 +7,9 @@ module MyEnumerable
       end
       end
       return true
-    elsif reg_exp != nil
+    elsif pattern != nil
       list.each do |word|
-        if !word.match(reg_exp)
+        if !(pattern === word)
           return false
         end
       end
@@ -21,8 +21,32 @@ module MyEnumerable
       return true
     end
   end
+  
+  def any? (list, pattern = nil)
+    if block_given?
+      list.each do |word| 
+        if (yield word) 
+         return true
+        end
+      end
+      return false
+   elsif pattern != nil
+    list.each do |word| 
+      if pattern === word 
+        return true
+      end
+    end
+    return false  
+  else 
+    list.each do |word|
+      if word 
+         return true
+      end
+    end 
+    return false
+  end
 end
-
+end
 include MyEnumerable
 
-puts MyEnumerable.all?(%w[ant beart cat], (/t/))
+#puts MyEnumerable.all?([56, 11, 99], Integer)
