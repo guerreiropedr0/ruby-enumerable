@@ -1,13 +1,12 @@
 require 'MyEnumerable'
 
 class MyList
-include MyEnumerable
+  include MyEnumerable
   def initiliaze()
-  @list
+    @list
   end
 
   def each
-  yield
+    yield
   end
 end
-
