@@ -1,19 +1,20 @@
 
 module MyEnumerable
-  def all?(list, pattern = nil)
-    if block_given?
-      list.each do |word|
-        return false unless yield word
-      end
-    elsif !pattern.nil?
-      list.each do |word|
-        return false unless pattern === word
-      end
-    elsif list.include?(false) || list.include?(nil)
-      return false
+  def all?(&block)
+    Each {|item| yield item }
+    # if block_given?
+    #   list.each do |word|
+    #     return false unless yield word
+    #   end
+    # elsif !pattern.nil?
+    #   list.each do |word|
+    #     return false unless pattern === word
+    #   end
+    # elsif list.include?(false) || list.include?(nil)
+    #   return false
 
-    end
-    true
+    # end
+    # true
   end
 
   def any?(list, pattern = nil)
