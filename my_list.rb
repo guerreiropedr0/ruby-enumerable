@@ -18,9 +18,10 @@ class MyList
   end
 end
 
-list = MyList.new(1, 2, 3, 4)
+list = MyList.new(1, 2, 3, 4, "cat")
 puts list.all? {|e| e < 5}
 puts list.all? {|e| e > 5}
 list.Each { |i| puts i * 2 }
 puts list.any? {|e| e == 1}
-puts list.filter {|e| e.even?}
+#list.filter {|e| e.even?}
+puts list.filter {|e|  /c/ === e }
