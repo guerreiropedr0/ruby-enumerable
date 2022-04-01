@@ -5,48 +5,23 @@ module MyEnumerable
       return false unless yield item
       return true
       end
-    # if block_given?
-    #   list.each do |word|
-    #     return false unless yield word
-    #   end
-    # elsif !pattern.nil?
-    #   list.each do |word|
-    #     return false unless pattern === word
-    #   end
-    # elsif list.include?(false) || list.include?(nil)
-    #   return false
-
-    # end
-    # true
   end
 
-  def any?(list, pattern = nil)
-    if block_given?
-      list.each do |word|
-        return true if yield word
+  def any?
+    Each do |item| 
+      return true if yield item
+      return false
       end
-    elsif !pattern.nil?
-      list.each do |word|
-        return true if pattern === word
-      end
-    else
-      list.each do |word|
-        return true if word
-      end
-    end
-    false
   end
   
-  def filter(list)
-    filtered_array = []
-    if block_given?
-      list.each do |element|
-        if yield element
-          filtered_array.push(element)
-        end
+  def filter
+    @filtered_array = []
+    Each do |item| 
+      if yield item
+        @filtered_array << item
       end
-      return filtered_array
-    else return list
     end
+    return @filtered_array
+    
   end
 end
