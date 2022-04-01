@@ -5,7 +5,7 @@ module MyEnumerable
   end
 
   def any?
-    each { |e| return true unless yield e }
+    each { |e| return true if yield e }
     false
   end
 

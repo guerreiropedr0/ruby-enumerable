@@ -34,6 +34,12 @@ Install all the dependencies.
 - Twitter: [@guerreiropedr0](https://twitter.com/guerreiropedr0)
 - LinkedIn: [Pedro Guerreiro](https://www.linkedin.com/in/guerreiropedr0/)
 
+👤 **Fatima Ezzahra**
+
+- GitHub: [@TimmyChan99](https://github.com/TimmyChan99)
+- Twitter: [@elemenoun](https://twitter.com/elemenoun)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/fatima-ezzahra-elemenoun-020841225/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
