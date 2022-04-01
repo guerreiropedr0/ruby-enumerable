@@ -1,4 +1,4 @@
-require './my_enumerable.rb'
+require './my_enumerable'
 
 class MyList
   include MyEnumerable
@@ -14,4 +14,3 @@ class MyList
     end
   end
 end
-

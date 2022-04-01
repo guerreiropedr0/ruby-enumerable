@@ -1,4 +1,3 @@
-
 module MyEnumerable
   def all?
     each { |e| return false unless yield e }
@@ -9,17 +8,10 @@ module MyEnumerable
     each { |e| return true unless yield e }
     false
   end
-  
-  def filter(list)
+
+  def filter
     filtered_array = []
-    if block_given?
-      list.each do |element|
-        if yield element
-          filtered_array.push(element)
-        end
-      end
-      return filtered_array
-    else return list
-    end
+    each { |e| filtered_array.push(e) if yield e }
+    filtered_array
   end
 end
